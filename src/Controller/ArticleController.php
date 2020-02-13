@@ -6,8 +6,13 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing;
+use Twig\Extra\Intl\IntlExtension;
+
+
 class ArticleController extends AbstractController
 {
+
+
     /**
      * @Routing\Annotation\Route("/")
      */
@@ -33,6 +38,7 @@ class ArticleController extends AbstractController
             'I like bacon too! Buy some from my site! bakinsomebacon.com',
             'This is yet another EPIC, grandio COMMMMMMEEENNTTTTTT'
         ];
+        $name = 'Karolis';
         //return new Response('This is the name of the article');
 //        return new Response(sprintf(
 //            'This article is being read directly from URL and is called a slug: "%s"',
@@ -43,6 +49,8 @@ class ArticleController extends AbstractController
             'title' => ucwords(str_replace('-','',$slug)),
             'comments' => $comments,
             'pics' => $pics,
+            'name' => $name,
+
         ]);
     }
 }

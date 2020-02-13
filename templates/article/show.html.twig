@@ -1,3 +1,5 @@
+{% extends 'base.html.twig' %}
+{% block body %} <!-- this line refers to base.html.twig line 6 this is neccesary together with extends logic-->
 <h1>{{ title }}</h1>
 <div>
     <p>
@@ -13,7 +15,7 @@
 <div>
     <h2>Comments ({{ comments|length }})</h2>
     {% for comment in comments %}
-        <li>{{ comment }}</li>
+        <li>{{ comment }} author: {{ name }}</li>
     {% endfor %}
 
 </div>
@@ -23,3 +25,42 @@
         <img src="{{ pic }}" alt="Girl in a jacket" width="180" height="130">
     {% endfor %}
 </div>
+
+<div>
+    <!--https://twig.symfony.com/doc/3.x/tags/apply.html-->
+    {% apply upper %}
+        This text becomes uppercase<br>
+    {% endapply %}
+</div>
+    {% autoescape %}
+        Everything will be automatically escaped in this block
+        using the HTML strategy<br>
+    {% endautoescape %}
+
+    {% autoescape 'html' %}
+        Everything will be automatically escaped in this block
+        using the HTML strategy<br>
+    {% endautoescape %}
+
+    {% autoescape 'js' %}
+        Everything will be automatically escaped in this block
+        using the js escaping strategy<br>
+    {% endautoescape %}
+
+    {% autoescape false %}
+        Everything will be outputted as is in this block <br>
+    {% endautoescape %}
+
+
+    <div>
+        {% apply lower|escape('html') %}
+            <strong>SOME TEXT</strong><br>
+        {% endapply %}
+
+</div>
+
+<div>
+    {% do 1 + 2 %}
+</div>
+<div>{{ country_timezones('EN')|join(', ') }}</div>
+{% endblock %}
