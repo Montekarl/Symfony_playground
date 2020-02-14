@@ -8,6 +8,5 @@ composer require server
 error:
  Could not find package symfony/web-server-bundle in a version matching 5.0.*
  
- ah sheeeeet symfony cast fooked up and didn't update stuff for the new symfony. 
  
 
