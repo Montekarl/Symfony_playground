@@ -16,6 +16,7 @@
         "twig/intl-extra": "^3.0"
     },
     "require-dev": {
+        "symfony/debug-pack": "^1.0",
         "symfony/profiler-pack": "^1.0"
     },
     "config": {
