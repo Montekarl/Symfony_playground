@@ -20,18 +20,11 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Routing\Annotation\Route("/pics")
-     */
-    public function pics()
-    {
-
-    }
-
-    /**
      * @Routing\Annotation\Route("/news/{slug}")
      */
     public function show($slug)
     {
+        //dump($slug, $this);
         $pics = [
             'https://tse1.mm.bing.net/th?id=OIP.KkCfU0ctV5F92O3ZCJywowHaFj&pid=Api&rs=1&c=1&qlt=95&w=158&h=118',
             'https://tse1.mm.bing.net/th?id=OIP.TR2zLpluL8ZzX0MAb2JSFwHaEK&pid=Api&rs=1&c=1&qlt=95&w=211&h=118',
