@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
-{% block body %} <!-- this line refers to base.html.twig line 6 this is neccesary together with extends logic-->
-<h1>{{ title }}</h1>
+{% block title %}Read: {{ title }} {% endblock %}
+{% block body %} <!-- this line refers to base.html.twig line 6 this is neccesary together with extends logic.-->
+
+    <h1>{{ title }}</h1>
 <div>
     <p>
         Bacon ipsum dolor amet filet mignon picanha kielbasa jowl hamburger shankle biltong chicken turkey pastrami cupim pork chop. Chicken andouille prosciutto capicola picanha, brisket t-bone. Tri-tip pig pork chop short ribs frankfurter pork ham. Landjaeger meatball meatloaf, kielbasa strip steak leberkas picanha swine chicken pancetta pork loin hamburger pork.
@@ -51,16 +53,18 @@
         Everything will be outputted as is in this block <br>
     {% endautoescape %}
 
-
-    <div>
-        {% apply lower|escape('html') %}
-            <strong>SOME TEXT</strong><br>
-        {% endapply %}
+<div>
+    {% apply lower|escape('html') %}
+        <strong>SOME TEXT</strong><br>
+    {% endapply %}
 
 </div>
 
 <div>
     {% do 1 + 2 %}
 </div>
-<div>{{ country_timezones('EN')|join(', ') }}</div>
+
+<div>
+    {{ country_timezones('EN')|join(', ') }}
+</div>
 {% endblock %}

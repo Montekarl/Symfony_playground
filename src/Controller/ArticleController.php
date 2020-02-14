@@ -11,14 +11,20 @@ use Twig\Extra\Intl\IntlExtension;
 
 class ArticleController extends AbstractController
 {
-
-
     /**
      * @Routing\Annotation\Route("/")
      */
     public function homepage()
     {
         return new Response('This is a homepage');
+    }
+
+    /**
+     * @Routing\Annotation\Route("/pics")
+     */
+    public function pics()
+    {
+
     }
 
     /**
