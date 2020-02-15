@@ -29,12 +29,38 @@ Installing a Pack
             symfony/debug-bundle (v5.0.4)
             symfony/debug-pack (v1.0.7)
 
-6. From this point onward you can control the versions of the libraries
+6. From this point onward you can control the versions of the libraries by using constraints
+
+<b>version range: (>, >=, <, <=, !=), ex.</b>
+<b>hypenated version range: - </b>
+<b>next significant release: ~ </b>
+<b>Caret Version Range: ^ </b>
+
+            "require": {
+                "vendor/package": "1.3.2", // exactly 1.3.2
+            
+                // >, <, >=, <= | specify upper / lower bounds
+                "vendor/package": ">=1.3.2", // anything above or equal to 1.3.2
+                "vendor/package": "<1.3.2", // anything below 1.3.2
+            
+                // * | wildcard
+                "vendor/package": "1.3.*", // >=1.3.0 <1.4.0
+            
+                // ~ | allows last digit specified to go up
+                "vendor/package": "~1.3.2", // >=1.3.2 <1.4.0
+                "vendor/package": "~1.3", // >=1.3.0 <2.0.0
+            
+                // ^ | doesn't allow breaking changes (major version fixed - following semver)
+                "vendor/package": "^1.3.2", // >=1.3.2 <2.0.0
+                "vendor/package": "^0.3.2", // >=0.3.2 <0.4.0 // except if major version is 0
+            }
+                        
+            
 -------------------------
 Adding Assets:
 -------------------------
 1. File -> Settings -> "Symfony";
-2. Change "web directory" to public (by default "web")
+2. Change "web directory" to <b>public</b> (by default should say "web")
 3. Autocomplete assets, for example: 
 
             <link rel="stylesheet" href="/css/font.... and autocomplete.
@@ -44,7 +70,7 @@ Adding Assets:
             <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
 
 -------------------------
-Adding a link:
+Adding A Link:
 -------------------------
 1. Run in console ./bin/console debug:router
 2. Copy the NAME of the route
