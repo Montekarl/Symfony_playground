@@ -12,7 +12,7 @@ use Twig\Extra\Intl\IntlExtension;
 class ArticleController extends AbstractController
 {
     /**
-     * @Routing\Annotation\Route("/")
+     * @Routing\Annotation\Route("/") //to get full name run ./bin/console debug:router
      */
     public function homepage()
     {
