@@ -70,7 +70,7 @@ Adding Assets:
             <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
 
 -------------------------
-Adding A Link:
+Adding An URL:
 -------------------------
 1. Run in console ./bin/console debug:router
 2. Copy the NAME of the route
