@@ -31,10 +31,10 @@ Installing a Pack
 
 6. From this point onward you can control the versions of the libraries by using constraints
 
-<b>version range: (>, >=, <, <=, !=), ex.</b>
-<b>hypenated version range: - </b>
-<b>next significant release: ~ </b>
-<b>Caret Version Range: ^ </b>
+    6.1. Version range: (>, >=, <, <=, !=)
+    6.2. Hypenated version range: ( - ) 
+    6.3. Next significant release: ~
+    6.4. Caret Version Range: ^
 
             "require": {
                 "vendor/package": "1.3.2", // exactly 1.3.2
