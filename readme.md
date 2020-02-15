@@ -21,7 +21,7 @@ Installing a Pack
 
             composer unpack debug
             
-5. The previous will be removed and the libraries will show instead
+5. The previous PACK will be removed and the libraries will show instead
 
             easycorp/easy-log-handler (v1.0.9)
             symfony/monolog-bridge (v5.0.4)
@@ -29,19 +29,25 @@ Installing a Pack
             symfony/debug-bundle (v5.0.4)
             symfony/debug-pack (v1.0.7)
 
+6. From this point onward you can control the versions of the libraries
 -------------------------
 Adding Assets:
 -------------------------
 1. File -> Settings -> "Symfony";
 2. Change "web directory" to public (by default "web")
 3. Autocomplete assets, for example: 
-<link rel="stylesheet" href="/css/font.... and autocomplete.
+
+            <link rel="stylesheet" href="/css/font.... and autocomplete.
+
 4. Assets will be added automatically like so:
-<link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+            
+            <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
 
 -------------------------
 Adding a link:
 -------------------------
 1. Run in console ./bin/console debug:router
 2. Copy the NAME of the route
-3. User ROUTE in a link | href = {{ path('paste_route_name') }}
+3. User ROUTE NAME in a link
+
+            <a href = {{ path('paste_route_name') }}>
