@@ -1,29 +1,4 @@
 -------------------------
-Installing Symfony / SpaceBar (symfony cast tutorial)
--------------------------
-            $ composer self-update
-            $ composer create-project symfony/skeleton the_spacebar '4.4.*'
-            $ cd the_spacebar
-            $ php -S 127.0.0.1:8000 -t public
-
--------------------------
-Annotation Routes
-------------------------- 
-
-            $ composer require annotations
-
-In the controller type /** Enter to autocomplete a route, ex:
-            
-            /**
-             * @Routing\Annotation\Route("/URLname", name="routeName")
-             */
-
-All routes defined:
-
-            ./bin/console debug:router
-            
-            
--------------------------
 Installing Server
 -------------------------         
             
@@ -52,6 +27,31 @@ $ composer require recipe name package version
 
             $composer require profiler --dev
 
+-------------------------
+Installing Symfony / SpaceBar (symfony cast tutorial)
+-------------------------
+            $ composer self-update
+            $ composer create-project symfony/skeleton the_spacebar '4.4.*'
+            $ cd the_spacebar
+            $ php -S 127.0.0.1:8000 -t public
+
+-------------------------
+Annotation Routes
+------------------------- 
+
+            $ composer require annotations
+
+In the controller type /** Enter to autocomplete a route, ex:
+            
+            /**
+             * @Routing\Annotation\Route("/URLname", name="routeName")
+             */
+
+All routes defined:
+
+            ./bin/console debug:router
+            
+            
 -------------------------
 Installing a Pack
 -------------------------
@@ -115,6 +115,36 @@ Adding Assets:
 4. Assets will be added automatically like so:
             
             <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+
+-------------------------
+Installing and Using Twig
+-------------------------
+            
+            $ composer require twig
+            
+To create a twig create a twig file in <b>templates</b>
+            
+            show.html.twig
+
+Synthax:
+
+            Use {{ }} to print something
+            Use {% %} to do something
+            Use {# #} to comment
+
+-------------------------
+Looping an array with a Twig
+-------------------------
+
+Create an array in a controller function:
+
+            $variable = [1,2,3,4,5];
+
+Create a loop in a twig file:
+            
+            {% for variable in variables %}
+                <li>{{ variable }}</li>
+            {% endfor %}
 
 -------------------------
 Adding An URL:
