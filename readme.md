@@ -117,7 +117,7 @@ Adding Assets:
             <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
 
 -------------------------
-Installing and Using Twig
+Installing and Using Twig (https://twig.symfony.com/)
 -------------------------
             
             $ composer require twig
@@ -136,7 +136,7 @@ Synthax:
 Looping an array with a Twig
 -------------------------
 
-Create an array in a controller function:
+Create an array within a method in a controller class:
 
             $variable = [1,2,3,4,5];
 
@@ -145,6 +145,46 @@ Create a loop in a twig file:
             {% for variable in variables %}
                 <li>{{ variable }}</li>
             {% endfor %}
+            
+Count array elements:
+
+            {{ variables|length }}
+            
+-------------------------
+Template Inheritance:
+-------------------------
+
+Any new twig file should extend a base twig file on top of each, add this. 
+
+            {% extends 'base.html.twig' %}      
+            this means you want to include current TWIG file into base.html.twig  
+
+-------------------------
+Blocks:
+-------------------------
+
+base.html.twig has this line: {% block body %} - {% endblock %}
+
+Provided your child twig extends base.html.twig, you can replace the content of that block like so:
+
+            {% extends 'base.html.twig' %}
+            
+            {% block body %}
+                <h1>{{ title }}</h1>
+                <ul>
+                    {% for comment in comments %}
+                        <li>{{ comment }}</li>
+                    {% endfor %}
+                </ul>
+            {% endblock %}
+            
+Same with title:
+
+            {% extends 'base.html.twig' %}
+            
+            {% block title %}
+                Read: {{ title }}
+            {% endblock %}
 
 -------------------------
 Adding An URL:
