@@ -1,4 +1,44 @@
 -------------------------
+Installing Symfony / SpaceBar (symfony cast tutorial)
+-------------------------
+            $ composer self-update
+            $ composer create-project symfony/skeleton the_spacebar '4.4.*'
+            $ cd the_spacebar
+            $ php -S 127.0.0.1:8000 -t public
+
+-------------------------
+Annotation Routes
+------------------------- 
+
+            $ composer require annotations
+
+In the controller type /** Enter to autocomplete a route, ex:
+            
+            /**
+             * @Routing\Annotation\Route("/URLname", name="routeName")
+             */
+
+All routes defined:
+
+            ./bin/console debug:router
+            
+            
+-------------------------
+Installing Server
+-------------------------         
+            
+            $ composer require server
+            $ php ./bin/console server:run
+            
+-------------------------
+Symfony Console
+-------------------------         
+
+List of all commands:
+ 
+            $ php ./bin/console
+                    
+-------------------------
 Main folders to work with: 
 -------------------------
 1. src - php code kept here (controllers etc)
@@ -6,9 +46,16 @@ Main folders to work with:
 3. public - front controller (passively aware.)
 
 -------------------------
+Installing a Recipe
+-------------------------
+$ composer require recipe name package version
+
+            $composer require profiler --dev
+
+-------------------------
 Installing a Pack
 -------------------------
-1. Navigate to https://flex.symfony.com/
+1. Navigate to https://flex.symfony.com/ and choose a pack
 2. Use alias to install a package, for example:
             
             composer require debug --dev

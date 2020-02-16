@@ -16,7 +16,7 @@ class ArticleController extends AbstractController
      */
     public function homepage()
     {
-        return new Response('This is a homepage');
+        return $this->render('article/homepage.html.twig');
     }
 
     /**
