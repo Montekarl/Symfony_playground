@@ -1,11 +1,9 @@
--------------------------
 Installing Server
 -------------------------         
             
             $ composer require server
             $ php ./bin/console server:run
             
--------------------------
 Symfony Console
 -------------------------         
 
@@ -13,21 +11,18 @@ List of all commands:
  
             $ php ./bin/console
                     
--------------------------
 Main folders to work with: 
 -------------------------
 1. src - php code kept here (controllers etc)
 2. config - configuration yaml files kept here
 3. public - front controller (passively aware.)
 
--------------------------
 Installing a Recipe
 -------------------------
 $ composer require recipe name package version
 
             $composer require profiler --dev
 
--------------------------
 Installing Symfony / SpaceBar (symfony cast tutorial)
 -------------------------
             $ composer self-update
@@ -35,7 +30,6 @@ Installing Symfony / SpaceBar (symfony cast tutorial)
             $ cd the_spacebar
             $ php -S 127.0.0.1:8000 -t public
 
--------------------------
 Annotation Routes
 ------------------------- 
 
@@ -52,8 +46,7 @@ All routes defined:
             ./bin/console debug:router
             
             
--------------------------
-Installing a Pack
+Installing a Pack and Versioning
 -------------------------
 1. Navigate to https://flex.symfony.com/ and choose a pack
 2. Use alias to install a package, for example:
@@ -103,7 +96,6 @@ Installing a Pack
             }
                         
             
--------------------------
 Adding Assets:
 -------------------------
 1. File -> Settings -> "Symfony";
@@ -116,7 +108,6 @@ Adding Assets:
             
             <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
 
--------------------------
 Installing and Using Twig (https://twig.symfony.com/)
 -------------------------
             
@@ -132,7 +123,6 @@ Synthax:
             Use {% %} to do something
             Use {# #} to comment
 
--------------------------
 Looping an array with a Twig
 -------------------------
 
@@ -150,7 +140,6 @@ Count array elements:
 
             {{ variables|length }}
             
--------------------------
 Template Inheritance:
 -------------------------
 
@@ -159,7 +148,6 @@ Any new twig file should extend a base twig file on top of each, add this.
             {% extends 'base.html.twig' %}      
             this means you want to include current TWIG file into base.html.twig  
 
--------------------------
 Blocks:
 -------------------------
 
@@ -183,14 +171,27 @@ Same with title:
             {% extends 'base.html.twig' %}
             
             {% block title %}
-                Read: {{ title }}
+                {{ title }}
             {% endblock %}
 
--------------------------
-Adding An URL:
+Generating URL with path()
 -------------------------
 1. Run in console ./bin/console debug:router
 2. Copy the NAME of the route
 3. User ROUTE NAME in a link
 
             <a href = {{ path('paste_route_name') }}>
+
+Generating URL with a {wildcard}
+-------------------------
+
+
+Generating AJAX request to Count Likes
+-------------------------
+
+1. Create a new javascript file in public directory and add:
+            
+            $(document).ready(function () {
+            
+            })
+2. 
