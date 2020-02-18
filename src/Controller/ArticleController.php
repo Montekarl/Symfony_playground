@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing;
@@ -51,5 +52,13 @@ class ArticleController extends AbstractController
             'name' => $name,
 
         ]);
+    }
+
+    /**
+     * @Routing\Annotation\Route("/news/{slug}/heart", name="article_toggle_heart")
+     */
+    public function toggleArticleHeart($slug)
+    {
+        //TODO - heart/unheart the article
     }
 }
