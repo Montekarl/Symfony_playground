@@ -186,7 +186,7 @@ Generating URL with a {wildcard}
 -------------------------
 
 
-Generating AJAX request to Count Likes
+Generating AJAX request to store Likes
 -------------------------
 
 1. Create a new javascript file in public directory and add:
@@ -194,4 +194,18 @@ Generating AJAX request to Count Likes
             $(document).ready(function () {
             
             })
-2. 
+2. Add <b>onclick</b> functionality to replace fontawesome icons:
+
+            $('.js-like-article').on('click', function(e) {
+               e.preventDefault();
+       
+               var $link = $(e.currentTarget);
+               $link.toggleClass('far fa-heart-o').toggleClass('far fa-heart');
+       
+               $.ajax({
+                   method: 'POST',
+                   url: $link.attr('href')
+               }).done(function(data) {
+                   $('.js-like-article-count').html(data.hearts);
+               })
+           });

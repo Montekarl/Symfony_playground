@@ -60,5 +60,8 @@ class ArticleController extends AbstractController
     public function toggleArticleHeart($slug)
     {
         //TODO - heart/unheart the article
+        return new JsonResponse(['hearts' => random_int(5, 100)]);
+        // can also use a shortcut
+        //return $this->json(['hearts' => rand(5,100)]);
     }
 }
