@@ -55,7 +55,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Routing\Annotation\Route("/news/{slug}/heart", name="article_toggle_heart")
+     * @Routing\Annotation\Route("/news/{slug}/heart", name="article_toggle_heart", methods = {"POST"})
      */
     public function toggleArticleHeart($slug)
     {
